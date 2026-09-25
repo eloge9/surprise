@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0F0F18">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%92%99%3C/text%3E%3C/svg%3E">
+    <title>Notre histoire — Une question</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Manrope:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/question.css">
+    <script>document.documentElement.classList.add("js");</script>
+</head>
+<!-- Silence : pas de musique avant la question. -->
+<body data-page="question" data-music="">
+    <div class="voile" aria-hidden="true"></div>
+
+    <main class="scene question">
+        <div class="question__halo" aria-hidden="true"></div>
+
+        <div class="contenu question__texte" id="texte">
+            <p class="grand reveal" data-manuel data-pause="2200">Alors…</p>
+            <p class="grand reveal" data-manuel data-pause="2600">Après tout ça…</p>
+            <h1 class="question__titre reveal reveal--flou" data-manuel data-pause="1400">Veux-tu être ma copine&nbsp;? ❤️</h1>
+        </div>
+
+        <div class="reponses reveal" id="reponses" data-manuel hidden>
+            <button class="btn btn--plein reponses__oui" type="button" id="oui">OUI ❤️</button>
+            <button class="btn reponses__non" type="button" id="non">NON</button>
+        </div>
+        <p class="sr-only" id="annonce" aria-live="polite"></p>
+
+        <!-- Si elle choisit vraiment NON : un message respectueux, sans pression. -->
+        <div class="contenu respect" id="respect" hidden>
+            <p class="grand reveal" data-manuel data-pause="1800">D'accord.</p>
+            <p class="doux reveal" data-manuel data-pause="1800">Merci d'avoir lu jusqu'ici, vraiment.<br>Ce que j'ai écrit reste vrai.</p>
+            <p class="doux reveal" data-manuel data-pause="1800">Je respecte ta réponse.<br>Et je serai toujours là si tu as besoin de moi. ❤️</p>
+            <div class="suite reveal" data-manuel>
+                <a class="btn" href="index.html">Revoir l'histoire depuis le début</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/config.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/audio.js" defer></script>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/question.js" defer></script>
+</body>
+</html>

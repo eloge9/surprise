@@ -1,154 +1,54 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Happy Birthday Vanessa ❤️</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0F0F18">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%92%99%3C/text%3E%3C/svg%3E">
+    <title>Notre histoire</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Manrope:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/accueil.css">
+    <script>document.documentElement.classList.add("js");</script>
+</head>
+<body data-page="accueil" data-music="anonyme">
+    <div class="voile" aria-hidden="true"></div>
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
-      rel="stylesheet"
-    />
+    <main>
+        <section class="scene accueil" data-particules="16">
+            <div class="accueil__halo" aria-hidden="true"></div>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- INTRO CINEMATIQUE -->
-    <div class="intro-screen" id="introScreen">
-      <div class="intro-overlay"></div>
+            <!-- Écran 1 : l'invitation -->
+            <div class="contenu accueil__seuil" id="seuil">
+                <p class="chapitre reveal">Pour <span data-prenom>toi</span>.</p>
+                <p class="grand reveal" style="--d:.5s">Il y a une histoire que j'aimerais te raconter.</p>
+                <div class="suite reveal" style="--d:1.2s">
+                    <button class="btn" type="button" id="ouvrir">Je suis prête</button>
+                    <p class="discret">Mets tes écouteurs si tu peux&nbsp;🎧</p>
+                </div>
+            </div>
 
-      <div class="intro-content">
-        <h1 class="intro-title">Happy Birthday Vanessa ❤️</h1>
-
-        <p class="intro-subtitle">
-          Une petite surprise créée spécialement pour toi...
-        </p>
-
-        <button id="openBtn" class="open-btn">Ouvrir mon message ❤️</button>
-      </div>
-    </div>
-
-    <!-- BACKGROUND -->
-    <div class="stars"></div>
-    <div class="hearts-container"></div>
-
-    <!-- AUDIO -->
-    <audio id="bg-music" loop>
-      <source
-        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-        type="audio/mpeg"
-      />
-    </audio>
-
-    <!-- BOUTON MUSIQUE -->
-    <button class="music-btn" id="musicBtn">▶</button>
-
-    <!-- CONTENU PRINCIPAL -->
-    <main class="main-content hidden" id="mainContent">
-      <!-- HERO -->
-      <section class="hero">
-        <div class="glass-card hero-card">
-          <h1 class="main-title">Joyeux Anniversaire Vanessa ❤️</h1>
-
-          <p class="hero-text">
-            Cette nuit n’est pas une nuit comme les autres... parce
-            qu’aujourd’hui, une personne exceptionnelle fête son anniversaire.
-          </p>
-
-          <div class="countdown" id="countdown">
-            Le jour spécial de Vanessa est arrivé ❤️
-          </div>
-        </div>
-      </section>
-
-      <!-- MESSAGE -->
-      <section class="message-section">
-        <div class="glass-card message-card">
-          <h2>Un message pour toi ✨</h2>
-
-          <p id="typedText" class="typed-text"></p>
-
-          <div class="quote">
-            “Certaines personnes rendent le monde plus beau juste par leur
-            présence.”
-          </div>
-        </div>
-      </section>
-
-      <!-- SOUVENIRS -->
-      <section class="memories-section">
-        <h2 class="section-title">Ce que je pense de toi ❤️</h2>
-
-        <div class="cards-container">
-          <div class="memory-card">
-            <span>✨</span>
-            <p>Ton sourire illumine mes journées.</p>
-          </div>
-
-          <div class="memory-card">
-            <span>💖</span>
-            <p>Tu es une personne exceptionnelle.</p>
-          </div>
-
-          <div class="memory-card">
-            <span>🌸</span>
-            <p>Merci d’exister Vanessa.</p>
-          </div>
-
-          <div class="memory-card">
-            <span>🎂</span>
-            <p>Tu mérites le meilleur aujourd’hui et toujours.</p>
-          </div>
-
-          <div class="memory-card">
-            <span>🌙</span>
-            <p>Ta présence apporte quelque chose d’unique.</p>
-          </div>
-
-          <div class="memory-card">
-            <span>❤️</span>
-            <p>Cette journée est aussi spéciale que toi.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- GATEAU -->
-      <section class="cake-section">
-        <div class="cake">
-          <div class="candle">
-            <div class="flame"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FINAL -->
-      <section class="final-section">
-        <div class="glass-card final-card">
-          <h2>Joyeux anniversaire Vanessa ❤️</h2>
-
-          <p>
-            Que cette journée soit remplie de bonheur, de sourires, de douceur
-            et d’amour.
-          </p>
-
-          <p>
-            Tu es une personne précieuse, et tu mérites sincèrement tout ce
-            qu’il y a de beau dans ce monde.
-          </p>
-
-          <h3>Que cette nouvelle année de ta vie soit magnifique ✨</h3>
-
-          <div class="signature">— Avec toute mon affection ❤️</div>
-        </div>
-      </section>
+            <!-- Écran 2 : apparaît après « Je suis prête » -->
+            <div class="contenu lignes accueil__recit" id="recit" hidden>
+                <p class="grand reveal" data-manuel data-pause="2200">Ce n'est pas une histoire inventée.</p>
+                <p class="doux reveal" data-manuel data-pause="2400">C'est la nôtre.<br>Enfin… surtout la façon dont je l'ai vécue, de mon côté.</p>
+                <p class="doux reveal" data-manuel data-pause="1800">Prends ton temps.<br>Il n'y a rien à faire, à part lire.</p>
+                <div class="suite reveal" data-manuel>
+                    <a class="btn btn--plein" href="histoire.html">Commencer <span class="btn__fleche" aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- CONFETTIS -->
-    <canvas id="confettiCanvas"></canvas>
-
-    <!-- JS -->
-    <script src="script.js"></script>
-  </body>
+    <script src="js/config.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/audio.js" defer></script>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/accueil.js" defer></script>
+</body>
 </html>

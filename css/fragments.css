@@ -1,0 +1,109 @@
+/* Fragments — une pellicule verticale de souvenirs. */
+
+.pellicule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(3.5rem, 12vh, 7rem);
+    padding: 2rem var(--gouttiere) 4rem;
+}
+
+.fragment {
+    width: 100%;
+    max-width: 26rem;
+    margin: 0;
+    text-align: center;
+}
+.fragment[data-qui="moi"] { max-width: 20rem; }   /* ses photos à lui : un peu plus discrètes */
+
+.fragment__cadre {
+    position: relative;
+    width: 100%;
+    aspect-ratio: var(--ratio, 9 / 16);
+    max-height: 78vh;
+    max-height: 78svh;
+    margin-inline: auto;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #07070c;
+    box-shadow:
+        0 30px 70px -30px rgba(0, 0, 0, 0.9),
+        0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+/* Quand la hauteur est limitée, la largeur suit le ratio pour ne rien déformer. */
+@supports (aspect-ratio: 1) {
+    .fragment__cadre { width: min(100%, calc(78svh * var(--ratio, 9 / 16))); }
+}
+.fragment__cadre.is-paysage { width: 100%; }
+
+.fragment[data-qui="elle"] .fragment__cadre {
+    box-shadow:
+        0 30px 70px -30px rgba(0, 0, 0, 0.9),
+        0 0 0 1px rgba(156, 195, 238, 0.18),
+        0 0 60px -20px rgba(30, 58, 95, 0.9);
+}
+
+.fragment__media {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;         /* jamais de visage déformé ni coupé */
+    background: #07070c;
+}
+
+/* Bouton lecture/pause qui couvre la vidéo */
+.fragment__lecture {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--blanc);
+    cursor: pointer;
+    touch-action: manipulation;
+}
+.fragment__lecture:focus-visible { outline-offset: -6px; border-radius: 16px; }
+.fragment__icone {
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(15, 15, 24, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+}
+.fragment__icone svg { width: 26px; height: 26px; margin-left: 3px; }
+.is-lecture .fragment__icone { opacity: 0; transform: scale(0.9); }
+
+/* Bouton son */
+.fragment__son {
+    position: absolute;
+    right: 0.7rem;
+    bottom: 0.7rem;
+    min-height: 40px;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+    background: rgba(15, 15, 24, 0.6);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    color: var(--blanc);
+    font: inherit;
+    font-size: 0.8rem;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+.fragment__son[aria-pressed="true"] { border-color: var(--rose-doux); }
+
+.fragment__legende {
+    margin-top: 1.1rem;
+    font-family: var(--police-titre);
+    font-style: italic;
+    font-size: clamp(1.25rem, 5vw, 1.6rem);
+    line-height: 1.35;
+    color: var(--texte-doux);
+}

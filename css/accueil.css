@@ -1,0 +1,25 @@
+/* Accueil — un seuil, très peu de mots. */
+
+.accueil { overflow: hidden; }
+
+.accueil__halo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: min(120vw, 44rem);
+    aspect-ratio: 1;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(30, 58, 95, 0.55) 0%, rgba(30, 58, 95, 0.12) 45%, transparent 70%);
+    animation: respirer 9s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.accueil .contenu { position: relative; }
+
+.accueil__seuil .grand { font-size: clamp(2rem, 8vw, 3.2rem); }
+
+.accueil__seuil {
+    transition: opacity 0.9s var(--ease), filter 0.9s var(--ease);
+}
+.accueil__seuil.is-sortie { opacity: 0; filter: blur(6px); }

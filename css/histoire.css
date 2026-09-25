@@ -1,0 +1,19 @@
+/* Histoire — le commencement, l'interlude « Dadju malhonnête », les excuses, la petite sœur. */
+
+.malhonnete h2 em {
+    font-style: italic;
+    color: var(--rose-doux);
+}
+
+/* L'interlude humoristique a une lueur rose un peu plus présente. */
+.malhonnete::before {
+    content: "";
+    position: absolute;
+    inset: 15% 0;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 79, 129, 0.08), transparent 70%);
+    pointer-events: none;
+}
+
+/* Les scènes calmes : plus d'air, plus lent. */
+.calme { --duree-reveal: 1.6s; }
+.calme .lignes > * { margin-bottom: 1.3em; }

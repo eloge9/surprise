@@ -1,0 +1,77 @@
+/* Oui — la célébration, puis l'épilogue. */
+
+.scene-oui { overflow: hidden; }
+
+.oui__lumiere {
+    position: absolute;
+    left: 50%;
+    top: 42%;
+    width: min(140vw, 50rem);
+    aspect-ratio: 1;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+        rgba(255, 79, 129, 0.22) 0%,
+        rgba(245, 213, 138, 0.10) 35%,
+        rgba(30, 58, 95, 0.18) 55%,
+        transparent 72%);
+    animation: respirer 7s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.plateau {
+    position: relative;
+    min-height: 16rem;
+    display: grid;
+    align-items: center;
+}
+
+.groupe { transition: opacity 0.8s var(--ease), filter 0.8s var(--ease); }
+.groupe.is-sortie { opacity: 0; filter: blur(6px); }
+.groupe > * { margin-bottom: 0.9em; }
+
+.oui__titre {
+    font-family: var(--police-titre);
+    font-weight: 500;
+    font-size: clamp(2.4rem, 11vw, 5rem);
+    letter-spacing: 0.06em;
+    line-height: 1.1;
+    background: linear-gradient(100deg, var(--blanc) 20%, var(--rose-doux) 50%, var(--or) 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    --duree-reveal: 1.8s;
+}
+
+.oui__date {
+    font-family: var(--police-titre);
+    font-style: italic;
+    font-size: clamp(2.4rem, 11vw, 4rem);
+    line-height: 1.15;
+    color: var(--or);
+}
+
+.oui__signature {
+    font-family: var(--police-titre);
+    font-style: italic;
+    font-size: clamp(2rem, 9vw, 3.4rem);
+    line-height: 1.2;
+    color: var(--rose-doux);
+    margin-top: 0.8em;
+    --duree-reveal: 2s;
+}
+
+.oui__actions {
+    position: relative;
+    min-height: 48px;
+    margin-top: 2rem;
+}
+.oui__actions .btn { animation: apparaitre 0.8s var(--ease) both; }
+
+.lien-discret {
+    color: var(--texte-discret);
+    font-size: 0.85rem;
+    text-underline-offset: 4px;
+    padding: 0.8rem;
+}
+.lien-discret:hover { color: var(--texte-doux); }

@@ -1,0 +1,39 @@
+/* Camp — l'attente, les « Non. », puis Cupidon. */
+
+.demande .btn { margin-top: 1.2rem; }
+
+.reponses-camp {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+    min-height: 6rem;
+}
+.reponses-camp li {
+    font-family: var(--police-titre);
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    font-style: italic;
+    color: var(--texte-doux);
+    line-height: 1.5;
+}
+/* Chaque « Non » un peu plus petit, un peu plus las. */
+.reponses-camp li:nth-child(2) { opacity: 0.85; }
+.reponses-camp li:nth-child(3) { opacity: 0.7; }
+.reponses-camp li:last-child  { color: var(--rose-doux); }
+
+.demande.is-terminee .btn { opacity: 0; pointer-events: none; }
+
+/* La révélation */
+.frappe { overflow: hidden; }
+.frappe::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 62%;
+    width: min(110vw, 40rem);
+    aspect-ratio: 1;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245, 213, 138, 0.14), transparent 65%);
+    pointer-events: none;
+}
+.frappe__revelation { color: var(--blanc); text-shadow: 0 0 40px rgba(245, 213, 138, 0.35); }

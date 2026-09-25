@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0F0F18">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%92%99%3C/text%3E%3C/svg%3E">
+    <title>Notre histoire — Oui</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Manrope:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/oui.css">
+    <script>document.documentElement.classList.add("js");</script>
+</head>
+<!-- Musique « oui » : démarre dès que le navigateur l'autorise (au plus tard au premier toucher). -->
+<body data-page="oui" data-music="oui" data-sans-retour>
+    <div class="voile" aria-hidden="true"></div>
+
+    <main class="scene scene-oui" data-particules="18">
+        <div class="oui__lumiere" aria-hidden="true"></div>
+
+        <!-- Chaque groupe s'affiche seul, l'un après l'autre (js/final.js). -->
+        <div class="plateau contenu" id="plateau" aria-live="polite">
+
+            <div class="groupe" data-groupe>
+                <h1 class="oui__titre reveal reveal--flou" data-manuel data-pause="1800">ELLE A DIT OUI ❤️</h1>
+                <p class="grand reveal" data-manuel>Attends… laisse-moi réaliser.</p>
+            </div>
+
+            <div class="groupe" data-groupe hidden>
+                <p class="doux reveal" data-manuel data-pause="1800">Donc maintenant, officiellement…</p>
+                <p class="grand reveal" data-manuel>tu es ma copine. ❤️</p>
+            </div>
+
+            <div class="groupe" data-groupe hidden>
+                <p class="doux reveal" data-manuel data-pause="1400">Et dire qu'on avait déjà programmé le mariage pour le…</p>
+                <p class="oui__date reveal" data-manuel>14 septembre 😂</p>
+            </div>
+
+            <div class="groupe" data-groupe hidden>
+                <p class="grand reveal" data-manuel data-pause="1600">Doucement. 😂</p>
+                <p class="grand reveal" data-manuel data-pause="2000">Une chose à la fois.</p>
+                <p class="grand rose reveal" data-manuel>Commençons déjà par être nous. ❤️</p>
+            </div>
+
+            <!-- ============ LA SUITE DE NOTRE HISTOIRE ============ -->
+            <div class="groupe groupe--final" data-groupe hidden>
+                <span class="chapitre reveal" data-manuel data-pause="800">Épilogue</span>
+                <h2 class="reveal reveal--flou" data-manuel data-pause="1800">La suite de notre histoire</h2>
+                <p class="doux reveal" data-manuel data-pause="2200">Je ne sais pas encore exactement à quoi ressemblera la suite.</p>
+                <p class="grand reveal" data-manuel data-pause="2400">Mais j'aimerais beaucoup l'écrire avec toi.</p>
+                <p class="oui__signature reveal reveal--flou" data-manuel data-pause="2000">Chapitre suivant : nous. ❤️</p>
+                <div class="suite reveal" data-manuel>
+                    <a class="lien-discret" href="index.html">Revoir notre histoire depuis le début</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="oui__actions">
+            <button class="btn" type="button" id="suivant" hidden>Continuer</button>
+        </div>
+    </main>
+
+    <script src="js/config.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/audio.js" defer></script>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/final.js" defer></script>
+</body>
+</html>
