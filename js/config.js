@@ -32,11 +32,15 @@ const CONFIG = {
     },
 
     /* ----------------------------------------------------------------------
-       RECEVOIR SA RÉPONSE — notification automatique (service ntfy.sh)
-       Dès qu'elle clique OUI (ou confirme NON), tu reçois un e-mail.
-       En plus (facultatif) : installe l'appli « ntfy » et abonne-toi au
-       même `sujet` pour recevoir aussi une notification sur ton téléphone.
-       `sujet` vide = rien n'est envoyé.
+       RECEVOIR SA RÉPONSE — notification automatique
+       Dès qu'elle clique OUI (ou confirme NON) :
+       - `email` : tu reçois un e-mail (service FormSubmit). La toute première
+         fois, FormSubmit t'envoie un mail « Activate » : clique le lien.
+         ⚠️ Ne marche que si le site est en ligne (pas en double-cliquant
+         sur le fichier .html).
+       - `sujet` (facultatif) : installe l'appli « ntfy », abonne-toi à ce
+         sujet, et tu reçois aussi une notification sur ton téléphone.
+       Champ vide = rien n'est envoyé par ce moyen.
        ---------------------------------------------------------------------- */
     notification: {
         sujet: "surprise-eloge-338642178c",

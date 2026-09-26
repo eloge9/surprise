@@ -21,17 +21,35 @@
     const { phrases, final } = CONFIG.boutonNon;
     let tentatives = 0;
 
-    /* ---------- notification ntfy.sh (CONFIG.notification) ---------- */
+    /* ---------- notification (CONFIG.notification) ----------
+       E-mail via FormSubmit, notification téléphone via ntfy.sh.
+       keepalive : l'envoi continue même si la page change juste après. */
 
     function prevenir(cle) {
         const notif = CONFIG.notification || {};
-        const sujet = String(notif.sujet || "").trim();
-        if (!sujet) return;
+        const message = notif[cle] || cle;
+
         const email = String(notif.email || "").trim();
-        const url = "https://ntfy.sh/" + encodeURIComponent(sujet) +
-            (email ? "?email=" + encodeURIComponent(email) : "");
-        // keepalive : l'envoi continue même si la page change juste après.
-        fetch(url, { method: "POST", body: notif[cle] || cle, keepalive: true }).catch(() => {});
+        if (email) {
+            const donnees = new FormData();
+            donnees.append("_subject", message);
+            donnees.append("message", message);
+            donnees.append("_template", "box");
+            donnees.append("_captcha", "false");
+            fetch("https://formsubmit.co/ajax/" + encodeURIComponent(email), {
+                method: "POST",
+                headers: { Accept: "application/json" },
+                body: donnees,
+                keepalive: true
+            }).catch(() => {});
+        }
+
+        const sujet = String(notif.sujet || "").trim();
+        if (sujet) {
+            fetch("https://ntfy.sh/" + encodeURIComponent(sujet), {
+                method: "POST", body: message, keepalive: true
+            }).catch(() => {});
+        }
     }
 
     /* ---------- déplacement du bouton NON à l'intérieur de sa zone ---------- */
