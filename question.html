@@ -28,11 +28,24 @@
             <h1 class="question__titre reveal reveal--flou" data-manuel data-pause="1400">Veux-tu être ma copine&nbsp;? ❤️</h1>
         </div>
 
+        <!-- Petit visage : de plus en plus triste à chaque NON. -->
+        <div class="humeur reveal" id="humeur" data-manuel aria-hidden="true" hidden>🥰</div>
+
         <div class="reponses reveal" id="reponses" data-manuel hidden>
             <button class="btn btn--plein reponses__oui" type="button" id="oui">OUI ❤️</button>
             <button class="btn reponses__non" type="button" id="non">NON</button>
         </div>
         <p class="sr-only" id="annonce" aria-live="polite"></p>
+
+        <!-- Fausse barre de chargement avant d'accepter le NON. -->
+        <div class="chargement" id="chargement" role="dialog" aria-modal="true" aria-labelledby="chargementTexte" hidden>
+            <div class="chargement__boite">
+                <p class="chargement__texte" id="chargementTexte" aria-live="polite">Traitement de ton refus…</p>
+                <div class="chargement__barre" aria-hidden="true"><span id="chargementBarre"></span></div>
+                <p class="chargement__pourcent" id="chargementPourcent">0 %</p>
+                <button class="btn btn--plein" type="button" id="changerAvis">Finalement… OUI ❤️</button>
+            </div>
+        </div>
 
         <!-- Si elle choisit vraiment NON : un message respectueux, sans pression. -->
         <div class="contenu respect" id="respect" hidden>
