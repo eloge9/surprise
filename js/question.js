@@ -315,6 +315,8 @@
     // Chaque écran de texte apparaît ligne par ligne, puis s'efface pour le suivant.
     const groupes = [...texte.querySelectorAll("[data-groupe]")];
     for (const [i, groupe] of groupes.entries()) {
+        // Dernier écran : le piano s'éteint doucement, la question arrive dans le silence.
+        if (i === groupes.length - 1) SiteAudio.arreter(2500);
         groupe.hidden = false;
         await sequence(groupe.querySelectorAll(".reveal"));
         if (i === groupes.length - 1) break;

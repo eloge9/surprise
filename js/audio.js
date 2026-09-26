@@ -44,8 +44,12 @@ const SiteAudio = (() => {
         stockage.ecrire(CLE_POSITIONS, JSON.stringify(positions));
     }
 
+    /* Volume de la piste (CONFIG.musiques[cle].volume), sinon CONFIG.volume. */
     function volumeCible() {
-        return typeof CONFIG !== "undefined" && CONFIG.volume ? CONFIG.volume : 0.6;
+        if (typeof CONFIG === "undefined") return 0.6;
+        const morceau = piste && CONFIG.musiques && CONFIG.musiques[piste];
+        if (morceau && typeof morceau.volume === "number") return morceau.volume;
+        return CONFIG.volume || 0.6;
     }
 
     /* Fondu de volume (sans effet sur iOS où le volume est fixe : pas grave). */
@@ -116,11 +120,12 @@ const SiteAudio = (() => {
         }
     }
 
-    function arreter() {
+    /* Silence, avec un fondu de `duree` ms (ex. 2500 avant la question). */
+    function arreter(duree = 600) {
         if (!el) return;
         if (piste) sauverPosition();
         const fin = () => { el.pause(); piste = null; majBouton(); };
-        if (!el.paused) fondu(0, 600, fin); else fin();
+        if (!el.paused) fondu(0, duree, fin); else fin();
     }
 
     /* Pause temporaire (ex. une vidéo avec son). */

@@ -87,7 +87,11 @@ const CONFIG = {
         soleil:     { src: "assets/audio/mon-soleil.mp3",    titre: "Dadju & Anitta — Mon Soleil" },
         bal:        { src: "assets/audio/dans-ton-port.mp3", titre: "Fanny J — Ancrée à ton port" },
         complique:  { src: "assets/audio/complique.mp3",     titre: "Dadju — Compliqué" },
-        oui:        { src: "assets/audio/epouse-moi.mp3",    titre: "Dadju & Tayc — Épouse-moi" }
+        oui:        { src: "assets/audio/epouse-moi.mp3",    titre: "Dadju & Tayc — Épouse-moi" },
+        /* question.html : piano pendant le texte, silence avant la question.
+           « Lovely Piano Song » — FreePD, domaine public (CC0). titre "" = pas de bandeau.
+           volume : propre à ce morceau (0.18 = 18 %), très doux sous le texte. */
+        piano:      { src: "assets/audio/piano-question.mp3", titre: "", volume: 0.18 }
     },
 
     /* ----------------------------------------------------------------------
