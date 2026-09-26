@@ -58,6 +58,23 @@
         });
     }
 
+    /* Liens WhatsApp : <a data-whatsapp="messageOui">. Sans numéro configuré,
+       le bloc [data-si-whatsapp] qui les entoure est retiré. */
+    function lierWhatsapp() {
+        const wa = CONFIG.whatsapp || {};
+        const numero = String(wa.numero || "").replace(/\D/g, "");
+        document.querySelectorAll("[data-whatsapp]").forEach((lien) => {
+            if (!numero) {
+                (lien.closest("[data-si-whatsapp]") || lien).remove();
+                return;
+            }
+            const message = wa[lien.dataset.whatsapp] || "";
+            lien.href = "https://wa.me/" + numero + (message ? "?text=" + encodeURIComponent(message) : "");
+            lien.target = "_blank";
+            lien.rel = "noopener";
+        });
+    }
+
     /* Image manquante : on retire discrètement la figure qui la contient. */
     function protegerImages() {
         document.querySelectorAll("img").forEach((img) => {
@@ -69,6 +86,7 @@
 
     const barre = construireBarre();
     remplirTextes();
+    lierWhatsapp();
     protegerImages();
     SiteNavigation.init();
     SiteAudio.init(barre);

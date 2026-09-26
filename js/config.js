@@ -18,6 +18,33 @@ const CONFIG = {
        [À COMPLÉTER] — laissé vide, l'accueil dit simplement « Pour toi. » */
     prenom: "",
 
+    /* ----------------------------------------------------------------------
+       RECEVOIR SA RÉPONSE — WhatsApp
+       Ton numéro au format international, SANS « + » ni espaces.
+       Ex. pour +228 90 12 34 56 → "22890123456"
+       [À COMPLÉTER] — laissé vide, les boutons « Envoyer ma réponse »
+       n'apparaissent pas.
+       ---------------------------------------------------------------------- */
+    whatsapp: {
+        numero: "22891271004",
+        messageOui: "OUI ❤️ J'ai vu ton site… et ma réponse est oui.",
+        messageNon: "J'ai vu ton site. Merci pour tout ce que tu as écrit ❤️ Ma réponse, c'est non."
+    },
+
+    /* ----------------------------------------------------------------------
+       RECEVOIR SA RÉPONSE — notification automatique (service ntfy.sh)
+       Dès qu'elle clique OUI (ou confirme NON), tu reçois un e-mail.
+       En plus (facultatif) : installe l'appli « ntfy » et abonne-toi au
+       même `sujet` pour recevoir aussi une notification sur ton téléphone.
+       `sujet` vide = rien n'est envoyé.
+       ---------------------------------------------------------------------- */
+    notification: {
+        sujet: "surprise-eloge-338642178c",
+        email: "gominaeloge@gmail.com",
+        messageOui: "❤️ ELLE A DIT OUI ❤️",
+        messageNon: "Elle a répondu non (après 15 essais 😅)."
+    },
+
     /* Ordre du parcours : sert à la barre de progression et au bouton retour. */
     parcours: [
         "index.html",
@@ -108,6 +135,13 @@ const CONFIG = {
             "Vraiment ?",
             "Même après tout ça ? 😭",
             "Je commence à être inquiet là…",
+            "Tu as appuyé à côté, non ? 🤔",
+            "Regarde le bouton rose, il est plus joli 😌",
+            "Mon cœur fait des bruits bizarres là 💔",
+            "Encore une fois et je pleure 😢",
+            "Bon, là je pleure 😭",
+            "Tu es vraiment têtue hein 😂",
+            "Je vais le dire à ta maman 😤",
             "Dernière chance 😭"
         ],
         final: "Bon… je respecte ton choix. ❤️"
@@ -136,8 +170,6 @@ const CONFIG = {
         { type: "video", src: "assets/videos/clip-04.mp4", qui: "elle", caption: "Je ne savais pas encore où tout cela allait nous mener." },
         { type: "video", src: "assets/videos/clip-07.mp4", qui: "elle", caption: "Et pourtant…" },
         { type: "video", src: "assets/videos/clip-11.mp4", qui: "moi", caption: "" },
-        /* clip-05 : montage « trend » avec plusieurs filles et des boissons — À VÉRIFIER */
-        { type: "video", src: "assets/videos/clip-05.mp4", qui: "elle", caption: "" },
         { type: "image", src: "assets/images/moi-rochers.jpeg", qui: "moi", caption: "Quelques souvenirs.",
           alt: "Moi assis sur des rochers" },
         /* clip-14 : une fille qui danse, un garçon derrière — « nous » ? À VÉRIFIER */

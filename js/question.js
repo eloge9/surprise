@@ -21,6 +21,19 @@
     const { phrases, final } = CONFIG.boutonNon;
     let tentatives = 0;
 
+    /* ---------- notification ntfy.sh (CONFIG.notification) ---------- */
+
+    function prevenir(cle) {
+        const notif = CONFIG.notification || {};
+        const sujet = String(notif.sujet || "").trim();
+        if (!sujet) return;
+        const email = String(notif.email || "").trim();
+        const url = "https://ntfy.sh/" + encodeURIComponent(sujet) +
+            (email ? "?email=" + encodeURIComponent(email) : "");
+        // keepalive : l'envoi continue même si la page change juste après.
+        fetch(url, { method: "POST", body: notif[cle] || cle, keepalive: true }).catch(() => {});
+    }
+
     /* ---------- déplacement du bouton NON à l'intérieur de sa zone ---------- */
 
     function chevauche(a, b, marge = 12) {
@@ -77,6 +90,8 @@
         }
 
         // Réponse NON confirmée : on respecte.
+        non.disabled = true;
+        prevenir("messageNon");
         reponses.classList.add("is-sortie");
         texte.classList.add("is-sortie");
         await attendre(900);
@@ -93,6 +108,7 @@
         document.body.classList.add("is-oui");
         oui.disabled = true;
         non.disabled = true;
+        prevenir("messageOui");
         setTimeout(() => SiteNavigation.partir("oui.html"), SiteAnimations.reduit ? 100 : 900);
     });
 

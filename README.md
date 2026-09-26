@@ -138,7 +138,7 @@ Tout est dans `css/style.css`, en haut du fichier (`:root`) :
 - `qui` : `"elle"`, `"moi"` ou `"nous"`. Ce champ change seulement le style (halo bleu pour elle, cadre plus discret pour toi). Il n'est jamais affiché.
 - `caption` : la phrase sous le média. `""` = aucune phrase.
 
-> ⚠️ **À vérifier** : j'ai classé les clips en regardant une image de chacun. Ceux marqués `"elle"` montrent une fille : vérifie que c'est bien elle. `clip-05` (montage « trend »), `clip-14` (une fille qui danse, un garçon derrière) et `clip-09` (non utilisé) sont les plus incertains. Les clips où tu apparais sont listés en commentaire à la fin de `fragments`.
+> ⚠️ **À vérifier** : j'ai classé les clips en regardant une image de chacun. Ceux marqués `"elle"` montrent une fille : vérifie que c'est bien elle. `clip-14` (une fille qui danse, un garçon derrière) et `clip-09` (non utilisé) sont les plus incertains. Les clips où tu apparais sont listés en commentaire à la fin de `fragments`.
 
 ---
 
