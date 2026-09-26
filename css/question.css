@@ -23,6 +23,10 @@ body.is-oui .question__halo {
 .reponses,
 .respect { position: relative; }
 
+.question__groupe {
+    transition: opacity 0.9s var(--ease), filter 0.9s var(--ease);
+}
+
 .question__liste {
     list-style: none;
     margin: 1.2rem 0 1.6rem;

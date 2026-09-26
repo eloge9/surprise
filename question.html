@@ -23,15 +23,36 @@
         <div class="question__halo" aria-hidden="true"></div>
 
         <div class="contenu question__texte" id="texte">
-            <p class="grand reveal" data-manuel data-pause="2200">Veux-tu être…</p>
-            <ul class="question__liste">
-                <li class="doux reveal" data-manuel data-pause="1800">ma complice dans les petites choses&nbsp;?</li>
-                <li class="doux reveal" data-manuel data-pause="1800">ma partenaire dans les grandes&nbsp;?</li>
-                <li class="doux reveal" data-manuel data-pause="1800">celle à qui je peux tout raconter&nbsp;?</li>
-                <li class="doux reveal" data-manuel data-pause="2400">celle avec qui je peux tout construire&nbsp;?</li>
-            </ul>
-            <p class="grand reveal" data-manuel data-pause="1800">Alors…</p>
-            <h1 class="question__titre reveal reveal--flou" data-manuel data-pause="1400">veux-tu être ma copine&nbsp;? ❤️</h1>
+            <!-- Trois écrans qui s'enchaînent seuls (js/question.js). -->
+            <div class="question__groupe" data-groupe>
+                <p class="grand reveal" data-manuel data-pause="2400">Après tout ce qu'on a vécu…</p>
+                <ul class="question__liste">
+                    <li class="doux reveal" data-manuel data-pause="1300">après les rencontres,</li>
+                    <li class="doux reveal" data-manuel data-pause="1300">les discussions,</li>
+                    <li class="doux reveal" data-manuel data-pause="1300">les rires,</li>
+                    <li class="doux reveal" data-manuel data-pause="1300">le bal,</li>
+                    <li class="doux reveal" data-manuel data-pause="1300">les complications,</li>
+                    <li class="doux reveal" data-manuel data-pause="1800">les moments où je ne savais plus quoi faire,</li>
+                    <li class="doux reveal" data-manuel data-pause="2600">et tous ces petits fragments de toi que j'ai appris à aimer…</li>
+                </ul>
+                <p class="grand reveal" data-manuel data-pause="3000">j'aimerais simplement savoir une chose.</p>
+            </div>
+
+            <div class="question__groupe" data-groupe hidden>
+                <p class="grand reveal" data-manuel data-pause="2200">Veux-tu être…</p>
+                <ul class="question__liste">
+                    <li class="doux reveal" data-manuel data-pause="1900">ma complice dans les petites choses&nbsp;?</li>
+                    <li class="doux reveal" data-manuel data-pause="1900">ma partenaire dans les grandes&nbsp;?</li>
+                    <li class="doux reveal" data-manuel data-pause="1900">celle avec qui je peux rire de tout&nbsp;?</li>
+                    <li class="doux reveal" data-manuel data-pause="1900">celle à qui je peux me confier&nbsp;?</li>
+                    <li class="doux reveal" data-manuel data-pause="3000">celle avec qui j'aimerais écrire la suite de cette histoire&nbsp;?</li>
+                </ul>
+            </div>
+
+            <div class="question__groupe" data-groupe hidden>
+                <p class="grand reveal" data-manuel data-pause="2000">…</p>
+                <h1 class="question__titre reveal reveal--flou" data-manuel data-pause="1400">Veux-tu être ma copine&nbsp;? ❤️</h1>
+            </div>
         </div>
 
         <!-- Petit visage : de plus en plus triste à chaque NON. -->

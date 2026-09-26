@@ -312,7 +312,16 @@
     /* ---------- mise en scène ---------- */
 
     await attendre(600);
-    await sequence(texte.querySelectorAll(".reveal"));
+    // Chaque écran de texte apparaît ligne par ligne, puis s'efface pour le suivant.
+    const groupes = [...texte.querySelectorAll("[data-groupe]")];
+    for (const [i, groupe] of groupes.entries()) {
+        groupe.hidden = false;
+        await sequence(groupe.querySelectorAll(".reveal"));
+        if (i === groupes.length - 1) break;
+        groupe.classList.add("is-sortie");
+        await attendre(900);
+        groupe.hidden = true;
+    }
     montrer(humeur);
     reponses.hidden = false;
     placesDeBase();
