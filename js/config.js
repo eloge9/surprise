@@ -175,11 +175,12 @@ const CONFIG = {
         /* clip-14 : une fille qui danse, un garçon derrière — « nous » ? À VÉRIFIER */
         { type: "video", src: "assets/videos/clip-14.mp4", qui: "", caption: "" },
         { type: "video", src: "assets/videos/clip-13.mp4", qui: "moi", caption: "" },
-        { type: "video", src: "assets/videos/clip-02.mp4", qui: "elle", caption: "Quelques fragments de toi." }
+        { type: "video", src: "assets/videos/clip-10.mp4", qui: "moi", caption: "" },
+        { type: "video", src: "assets/videos/clip-02.mp4", qui: "elle", caption: "Quelques fragments de toi, avec tes amis." }
 
         /* Médias disponibles mais non utilisés (ajoute-les si tu veux) :
            Vidéos de toi : clip-03 (à table, tenue blanche), clip-08 (selfie),
-                           clip-10 (voiture puis toi), clip-12 (allongé), clip-15 (bureau)
+                           clip-12 (allongé), clip-15 (bureau)
            Vidéo À VÉRIFIER : clip-09 (une fille qui danse, lumière violette)
            Photos : moi-nuit-camp.jpeg, moi-table.jpeg, moi-rochers-violet.jpeg,
                     selfie-bleu.jpeg (probablement toi), selfie-nuit.jpeg (inconnu),
